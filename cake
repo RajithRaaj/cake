@@ -45,8 +45,24 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid #eee;
             transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            break-inside: avoid;
         }
         .feedback-card:hover { transform: scale(1.03); border-color: var(--primary); }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +71,7 @@
         <a href="#" class="text-2xl font-bold text-amber-900">SANDHYA <span class="serif italic">Bakes</span></a>
         <nav class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-widest font-bold">
             <a href="#philosophy">Philosophy</a>
+            <a href="#craft">The Craft</a>
             <a href="#process">Process</a>
             <a href="#ingredients">Ingredients</a>
             <a href="#feedback">Testimonials</a>
@@ -98,6 +115,20 @@
         </div>
     </section>
 
+    <section id="craft" class="content-section bg-stone-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-5xl md:text-7xl mb-6">Artistry in <span class="serif italic text-amber-700">Motion</span></h2>
+                <p class="text-gray-500 uppercase tracking-[0.3em]">Watch how we bring your sweet dreams to life</p>
+            </div>
+            <div class="max-w-5xl mx-auto reveal">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HTXB6flODww?si=59UXrPf9ElJn1PAK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="ingredients" class="content-section bg-stone-50">
         <div class="container mx-auto px-6 text-center mb-20">
             <h2 class="text-5xl mb-4">Our Ethical Pantry</h2>
@@ -125,7 +156,7 @@
             <p class="text-gray-500">Real stories from our sweet community</p>
         </div>
         
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div class="container mx-auto px-6 columns-1 md:columns-2 lg:columns-3 gap-8">
             <div class="feedback-card">
                 <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <p class="italic text-gray-700 mb-6">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec interdum diam. Sed ut libero feugiat, scelerisque lectus vel, finibus nisi."</p>
@@ -140,6 +171,16 @@
                 <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <p class="italic text-gray-700 mb-6">"Nullam ac enim ut lorem varius pellentesque. Sandhya's attention to detail is absolutely architectural. Best brownies in Chennai!"</p>
                 <p class="font-bold">- Meera V., OMR</p>
+            </div>
+            <div class="feedback-card">
+                <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-700 mb-6">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae."</p>
+                <p class="font-bold">- Vikram L.</p>
+            </div>
+            <div class="feedback-card">
+                <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-700 mb-6">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores."</p>
+                <p class="font-bold">- Sneha J.</p>
             </div>
         </div>
     </section>
@@ -164,8 +205,19 @@
         </div>
     </section>
 
-    <footer class="bg-black text-stone-500 py-20 px-10">
-        </footer>
+    <footer id="contact" class="bg-black text-stone-500 py-20 px-10 text-center">
+        <div class="container mx-auto">
+            <h3 class="text-white text-3xl font-serif mb-6">Sandhya Bakes</h3>
+            <p class="mb-4">Adyar, Chennai - 600020</p>
+            <p class="mb-10 hover:text-amber-500 transition cursor-pointer">+91 98406 33766 | sandhyabakes@gmail.com</p>
+            <div class="flex justify-center space-x-6 text-xl mb-10">
+                <i class="fab fa-instagram cursor-pointer hover:text-white transition"></i>
+                <i class="fab fa-facebook cursor-pointer hover:text-white transition"></i>
+                <i class="fab fa-whatsapp cursor-pointer hover:text-white transition"></i>
+            </div>
+            <p class="text-xs opacity-50 uppercase tracking-widest">&copy; 2026 Sandhya Bakes. Crafted for sweetness.</p>
+        </div>
+    </footer>
 
     <script>
         // Smooth reveal on scroll logic
@@ -178,6 +230,18 @@
         document.querySelectorAll('.reveal').forEach(el => {
             el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
             observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white', 'shadow-xl', 'py-4');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.remove('bg-white', 'shadow-xl', 'py-4');
+                header.classList.add('py-6');
+            }
         });
     </script>
 </body>
