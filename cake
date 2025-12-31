@@ -3,372 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
-    <title>Sandhya Bakes | Custom Cakes, Brownies & Homemade Treats in Chennai</title>
-    <meta name="description" content="Discover Sandhya Bakes - Chennai's premier home bakery. Handcrafted custom cakes, fudgy brownies, and artisan cookies baked with love by Sandhya. Order online for birthdays and events.">
-    <meta name="keywords" content="Sandhya Bakes, Sandhya Bakes Chennai, home bakery Chennai, custom cakes Chennai, best brownies Chennai, birthday cakes Adyar, homemade cakes, Sandhya baker, designer cakes Chennai">
-    <meta name="author" content="Sandhya Bakes">
-
-    <meta property="og:title" content="Sandhya Bakes | Artisan Home Bakery">
-    <meta property="og:description" content="Handcrafted celebration cakes and treats baked fresh by Sandhya. Every bite is a memory.">
-    <meta property="og:image" content="https://i.ibb.co/4wdwY5bt/sample-image.png">
-    <meta property="og:url" content="https://sandhyabakes.vercel.app">
-    <meta property="og:type" content="website">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Bakery",
-      "name": "Sandhya Bakes",
-      "image": "https://i.ibb.co/4wdwY5bt/sample-image.png",
-      "@id": "",
-      "url": "https://sandhyabakes.vercel.app",
-      "telephone": "+91-XXXXXXXXXX",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Your Street",
-        "addressLocality": "Chennai",
-        "postalCode": "600XXX",
-        "addressCountry": "IN"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "21:00"
-      }
-    }
-    </script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Sandhya Bakes | Master Artisan Bakery Chennai</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
         :root {
-            --primary: #d4a373; /* Gold/Baked Bread */
-            --secondary: #faedcd; /* Cream */
-            --accent: #bc6c25; /* Crust Brown */
-            --dark: #283618; /* Forest Green (Freshness) */
-            --text-main: #444;
-            --transition-speed: 0.5s;
+            --primary: #d4a373;
+            --secondary: #faedcd;
+            --accent: #bc6c25;
+            --dark: #283618;
+            --glass: rgba(255, 255, 255, 0.8);
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fffaf0;
-            color: var(--text-main);
-            overflow-x: hidden;
+        body { font-family: 'Montserrat', sans-serif; background-color: #fffaf0; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+        /* Animation Keyframes */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
 
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .floating { animation: float 6s ease-in-out infinite; }
 
-        /* ADVANCED HOVER WIDGETS */
-        .baked-widget {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(212, 163, 115, 0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            cursor: pointer;
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
 
-        .baked-widget:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(188, 108, 37, 0.15);
-            border-color: var(--primary);
-            background: var(--secondary);
-        }
+        /* Section Spacing for Length */
+        .content-section { padding: 10rem 0; }
 
-        /* 3D INSTAGRAM FLIP WIDGET */
-        .instagram-flipper {
-            perspective: 1000px;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-        }
-
-        .flipper-inner {
-            position: relative;
-            width: 70px;
-            height: 70px;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .instagram-flipper:hover .flipper-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flipper-front, .flipper-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .flipper-front {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            color: white;
-            font-size: 2rem;
-        }
-
-        .flipper-back {
+        /* Feedback Cards */
+        .feedback-card {
             background: white;
-            color: #d6249f;
-            transform: rotateY(180deg);
-            font-weight: bold;
-            font-size: 0.8rem;
-            border: 2px solid #d6249f;
+            padding: 2.5rem;
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
         }
-
-        /* VIDEO SECTION */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* REVEAL ANIMATIONS */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        /* GRADIENT TEXT */
-        .gold-text {
-            background: linear-gradient(90deg, #bc6c25, #d4a373);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .feedback-card:hover { transform: scale(1.03); border-color: var(--primary); }
     </style>
 </head>
 <body>
 
-    <a href="https://instagram.com/sandhya_bakes" target="_blank" class="instagram-flipper" aria-label="Visit Instagram">
-        <div class="flipper-inner">
-            <div class="flipper-front">
-                <i class="fab fa-instagram"></i>
-            </div>
-            <div class="flipper-back">
-                FOLLOW<br>US
-            </div>
-        </div>
-    </a>
-
-    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-500 py-6">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold tracking-tighter text-amber-900">SANDHYA <span class="font-serif italic text-amber-600">Bakes</span></a>
-            <nav class="hidden md:flex space-x-10 text-xs uppercase font-bold tracking-[0.2em]">
-                <a href="#about" class="hover:text-amber-600 transition">About</a>
-                <a href="#promo" class="hover:text-amber-600 transition">Promo</a>
-                <a href="#menu" class="hover:text-amber-600 transition">Signature Menu</a>
-                <a href="#contact" class="bg-amber-800 text-white px-8 py-3 rounded-full hover:bg-amber-600 transition shadow-lg">Order Now</a>
-            </nav>
-            <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
-        </div>
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-500 py-6 px-10 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-amber-900">SANDHYA <span class="serif italic">Bakes</span></a>
+        <nav class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-widest font-bold">
+            <a href="#philosophy">Philosophy</a>
+            <a href="#process">Process</a>
+            <a href="#ingredients">Ingredients</a>
+            <a href="#feedback">Testimonials</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact" class="bg-amber-800 text-white px-6 py-2 rounded-full">Reserve a Date</a>
+        </nav>
     </header>
 
-    <section class="h-screen flex items-center justify-center relative bg-stone-900 overflow-hidden">
-        <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="absolute inset-0 w-full h-full object-cover opacity-40 scale-110" id="hero-img">
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-6xl md:text-9xl text-white mb-4 drop-shadow-2xl">Sandhya Bakes</h1>
-            <p class="text-lg md:text-2xl text-amber-200 font-light tracking-[0.4em] uppercase mb-10">Handcrafted Memories Since 2020</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#menu" class="btn bg-amber-600 text-white px-10 py-4 rounded-md font-bold uppercase tracking-widest hover:bg-amber-500 transition">View Collection</a>
-                <a href="#contact" class="btn border-2 border-white text-white px-10 py-4 rounded-md font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition">Book a Consultation</a>
-            </div>
+    <section class="relative h-[120vh] flex items-center justify-center bg-stone-900">
+        <div class="absolute inset-0 opacity-50 overflow-hidden">
+            <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 text-center text-white max-w-4xl px-4">
+            <span class="block mb-4 uppercase tracking-[0.5em] text-amber-400">Chennai's Finest Home Bakery</span>
+            <h1 class="text-7xl md:text-9xl mb-8 leading-none">The Art of the <br><span class="serif italic text-amber-200">Perfect Crumb</span></h1>
+            <p class="text-xl font-light mb-12 opacity-80 leading-relaxed">From a kitchen in Adyar to the hearts of thousands across Chennai. We don't just bake cakes; we craft edible emotions using organic ingredients and a dash of stardust.</p>
         </div>
     </section>
 
-    <section id="about" class="py-32 bg-white">
+    <section id="philosophy" class="content-section bg-white">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-20 items-center mb-24">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div class="reveal">
-                    <h2 class="text-5xl md:text-7xl mb-8 leading-tight gold-text">A Story Written<br>in Flour & Sugar</h2>
-                    <p class="text-gray-600 text-xl leading-relaxed mb-8">
-                        Sandhya Bakes isn't just a bakery; it's a testament to the art of home baking. Started in a small kitchen in Adyar, Sandhya has spent years perfecting the balance between classic tradition and modern design.
-                    </p>
-                    <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="w-full h-64 object-cover rounded-3xl shadow-xl">
+                    <h2 class="text-6xl mb-10 leading-tight">Meet Sandhya: <br><span class="text-amber-600">Architect turned Baker</span></h2>
+                    <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                        <p>Sandhya’s journey didn’t begin with flour, but with drafting paper. As a former architect, she views every cake as a structural masterpiece. The precision required to design a building is the same precision she applies to the internal layers of her signature Belgian Chocolate Ganache cakes.</p>
+                        <p>In 2020, what started as a therapeutic escape during the lockdown turned into a local phenomenon. Sandhya believes that a cake is the centerpiece of a memory—a birthday, a wedding, or a simple "I love you."</p>
+                        <blockquote class="border-l-4 border-amber-500 pl-6 italic text-2xl text-stone-800 my-10">
+                            "I don't believe in mass production. I believe in the sound of a whisk hitting a ceramic bowl and the smell of real vanilla bean."
+                        </blockquote>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
-                    <div class="baked-widget">
-                        <i class="fas fa-birthday-cake text-4xl text-amber-600 mb-4"></i>
-                        <h3 class="text-2xl mb-2">Custom Cakes</h3>
-                        <p class="text-sm text-gray-500">Bespoke designs tailored to your celebration theme.</p>
-                    </div>
-                    <div class="baked-widget">
-                        <i class="fas fa-cookie-bite text-4xl text-amber-600 mb-4"></i>
-                        <h3 class="text-2xl mb-2">Artisan Treats</h3>
-                        <p class="text-sm text-gray-500">Brownies, cookies, and cupcakes baked fresh daily.</p>
-                    </div>
-                    <div class="baked-widget">
-                        <i class="fas fa-leaf text-4xl text-amber-600 mb-4"></i>
-                        <h3 class="text-2xl mb-2">Pure Quality</h3>
-                        <p class="text-sm text-gray-500">No preservatives. Only the finest Belgian chocolate.</p>
-                    </div>
-                    <div class="baked-widget">
-                        <i class="fas fa-truck text-4xl text-amber-600 mb-4"></i>
-                        <h3 class="text-2xl mb-2">Home Delivery</h3>
-                        <p class="text-sm text-gray-500">Safely delivered across Chennai with utmost care.</p>
+                <div class="relative">
+                    <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="rounded-[4rem] shadow-2xl floating">
+                    <div class="absolute -bottom-10 -left-10 bg-amber-100 p-10 rounded-3xl hidden md:block">
+                        <p class="text-4xl font-bold text-amber-900">5,000+</p>
+                        <p class="uppercase text-xs tracking-widest">Cakes Delivered</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="promo" class="py-24 bg-stone-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-6xl mb-12">The Secret Behind the Magic</h2>
-            <div class="max-w-5xl mx-auto reveal">
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/HTXB6flODww?autoplay=1&mute=1&loop=1&playlist=HTXB6flODww&si=59UXrPf9ElJn1PAK" 
-                        title="Sandhya Bakes Promo" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="mt-8 text-amber-200 italic">"Baking is a science, but decorating is an emotion." — Sandhya</p>
+    <section id="ingredients" class="content-section bg-stone-50">
+        <div class="container mx-auto px-6 text-center mb-20">
+            <h2 class="text-5xl mb-4">Our Ethical Pantry</h2>
+            <p class="text-amber-700 uppercase tracking-widest">No Shortcuts. No Preservatives. Just Nature.</p>
+        </div>
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-sm">
+                <h4 class="text-2xl mb-4 text-amber-800">Cacao from Ghana</h4>
+                <p class="text-gray-600 leading-relaxed">We source 70% dark Belgian chocolate and single-origin cacao nibs to ensure every brownie has a complex, deep flavor profile that lingers.</p>
+            </div>
+            <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-sm">
+                <h4 class="text-2xl mb-4 text-amber-800">Farm-Fresh Dairy</h4>
+                <p class="text-gray-600 leading-relaxed">Our butter is churned locally, and our eggs come from pasture-raised hens, resulting in a richer crumb and a golden hue in every sponge.</p>
+            </div>
+            <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-sm">
+                <h4 class="text-2xl mb-4 text-amber-800">Organic Flours</h4>
+                <p class="text-gray-600 leading-relaxed">Unbleached, stone-ground flours provide the structural integrity our designer cakes need without the chemical aftertaste of commercial mixes.</p>
             </div>
         </div>
     </section>
 
-    <section id="menu" class="py-32 bg-[#faedcd]">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-5xl md:text-7xl mb-4">Signature Gallery</h2>
-                <p class="uppercase tracking-widest text-amber-800">Our Most Loved Creations</p>
+    <section id="feedback" class="content-section bg-white overflow-hidden">
+        <div class="container mx-auto px-6 text-center mb-20">
+            <h2 class="text-6xl mb-4">The Wall of Love</h2>
+            <p class="text-gray-500">Real stories from our sweet community</p>
+        </div>
+        
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="feedback-card">
+                <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-700 mb-6">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec interdum diam. Sed ut libero feugiat, scelerisque lectus vel, finibus nisi."</p>
+                <p class="font-bold">- Priya R., Adyar</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="product-card group reveal">
-                    <div class="relative overflow-hidden rounded-3xl h-96">
-                        <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 rounded-full font-bold">View Flavors</button>
-                        </div>
-                    </div>
-                    <h3 class="text-3xl mt-6 text-amber-950">Dreamy Fondant Cakes</h3>
-                    <p class="text-amber-800">Customized 3D designs for birthdays & weddings.</p>
+            <div class="feedback-card">
+                <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-700 mb-6">"Curabitur vehicula ex eu sem facilisis, ut efficitur nisl eleifend. Proin vel nisl a ante pretium luctus. Mauris bakes are the best!"</p>
+                <p class="font-bold">- Arjun K., Besant Nagar</p>
+            </div>
+            <div class="feedback-card">
+                <div class="flex text-amber-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-700 mb-6">"Nullam ac enim ut lorem varius pellentesque. Sandhya's attention to detail is absolutely architectural. Best brownies in Chennai!"</p>
+                <p class="font-bold">- Meera V., OMR</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="content-section bg-stone-900 text-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-5xl mb-16 text-center">Frequently Asked <span class="serif italic">Questions</span></h2>
+            <div class="space-y-8">
+                <div class="border-b border-stone-700 pb-6">
+                    <h4 class="text-xl mb-3 text-amber-400">How far in advance should I order?</h4>
+                    <p class="text-stone-400">For custom cakes, we recommend 7-10 days. For brownies and cookies, 48 hours is usually sufficient.</p>
                 </div>
-                <div class="product-card group reveal">
-                    <div class="relative overflow-hidden rounded-3xl h-96">
-                        <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 rounded-full font-bold">View Flavors</button>
-                        </div>
-                    </div>
-                    <h3 class="text-3xl mt-6 text-amber-950">Belgian Brownies</h3>
-                    <p class="text-amber-800">The fudgiest brownies in Chennai. Guaranteed.</p>
+                <div class="border-b border-stone-700 pb-6">
+                    <h4 class="text-xl mb-3 text-amber-400">Do you offer eggless options?</h4>
+                    <p class="text-stone-400">Yes! 90% of our menu can be made eggless without compromising on the fluffiness or flavor.</p>
                 </div>
-                <div class="product-card group reveal">
-                    <div class="relative overflow-hidden rounded-3xl h-96">
-                        <img src="https://i.ibb.co/4wdwY5bt/sample-image.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                            <button class="bg-white text-black px-6 py-2 rounded-full font-bold">View Flavors</button>
-                        </div>
-                    </div>
-                    <h3 class="text-3xl mt-6 text-amber-950">Artisan Cookies</h3>
-                    <p class="text-amber-800">Thick, chunky, and packed with premium chips.</p>
+                <div class="border-b border-stone-700 pb-6">
+                    <h4 class="text-xl mb-3 text-amber-400">Do you deliver to North Chennai?</h4>
+                    <p class="text-stone-400">We deliver all across Chennai. Delivery charges are calculated based on the distance from Adyar.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl text-center reveal">
-            <h2 class="text-5xl md:text-7xl mb-8">Ready for a Treat?</h2>
-            <p class="text-xl text-gray-500 mb-12">Every cake is a blank canvas. Tell us your vision, and we'll bake it to life.</p>
-            
-            <div class="bg-stone-50 p-10 rounded-[40px] shadow-inner border border-stone-200">
-                <iframe data-tally-src="https://tally.so/embed/3qqEv5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" title="Order Form"></iframe>
-            </div>
-
-            <div class="mt-16 flex flex-wrap justify-center gap-10 text-xl font-bold">
-                <a href="tel:+91XXXXXXXXXX" class="hover:text-amber-600"><i class="fas fa-phone mr-3"></i> +91 98406 33766</a>
-                <a href="mailto:sandhya@bakes.com" class="hover:text-amber-600"><i class="fas fa-envelope mr-3"></i> sandhyabakes@gmail.com</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-stone-900 text-stone-400 py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 border-b border-stone-800 pb-12">
-            <div>
-                <h3 class="text-white text-2xl font-serif mb-6">Sandhya Bakes</h3>
-                <p>Spreading sweetness across Chennai, one cake at a time. Authentically home-baked, professionally designed.</p>
-            </div>
-            <div>
-                <h3 class="text-white text-xl mb-6">Quick Search</h3>
-                <ul class="space-y-3">
-                    <li><a href="#about" class="hover:text-white">Our Story</a></li>
-                    <li><a href="#menu" class="hover:text-white">Designer Collection</a></li>
-                    <li><a href="#promo" class="hover:text-white">Video Gallery</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-white text-xl mb-6">Location</h3>
-                <p>Adyar, Chennai - 600020<br>Available for Pick-up & Delivery</p>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 pt-12 flex flex-col md:flex-row justify-between items-center text-sm opacity-50">
-            <p>&copy; 2026 Sandhya Bakes. All Rights Reserved.</p>
-            <p>Powered by <a href="https://zenora-ai.vercel.app/" class="underline">ZENORA AI</a></p>
-        </div>
-    </footer>
+    <footer class="bg-black text-stone-500 py-20 px-10">
+        </footer>
 
     <script>
-        // Header Transformation on Scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('bg-white', 'shadow-2xl', 'py-4');
-                header.classList.remove('py-6');
-            } else {
-                header.classList.remove('bg-white', 'shadow-2xl', 'py-4');
-                header.classList.add('py-6');
-            }
-        });
-
-        // Parallax Effect for Hero
-        window.addEventListener('scroll', () => {
-            const scroll = window.pageYOffset;
-            document.getElementById('hero-img').style.transform = `scale(1.1) translateY(${scroll * 0.4}px)`;
-        });
-
-        // Intersection Observer for Reveal
+        // Smooth reveal on scroll logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('opacity-100', 'translate-y-0');
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Tally Embed Script
-        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(el);
+        });
     </script>
-
 </body>
 </html>
